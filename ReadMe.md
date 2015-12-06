@@ -25,3 +25,14 @@ switching of direction, via the switching of polarity of power.
 The 3rd relay turns the motor on or off. the common pin is attached to
 a 9v battery and the first pin (on left) is attached to what will be
 9v on relays 1 and 2.
+
+The two pushbuttons have one side attached to a digital input pin and
+the other side attached to ground. In the sketch I use 
+
+```
+pinMode(power_button, INPUT);
+digitalWrite(power_button, HIGH);
+```
+
+This uses the built-in pull-up resistor. As a result, when the button
+is pressed, the button reads `LOW`; when not pressed, it reads `HIGH`.
